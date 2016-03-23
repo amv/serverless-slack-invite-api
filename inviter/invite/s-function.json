@@ -1,0 +1,43 @@
+{
+    "name": "invite",
+    "customName": false,
+    "customRole": false,
+    "handler": "invite/handler.handler",
+    "timeout": 6,
+    "memorySize": 1024,
+    "custom": {
+        "cors": {
+            "allowOrigin": "*",
+            "allowHeaders": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key"]
+        },
+        "excludePatterns": [],
+        "envVars": []
+    },
+    "endpoints": [
+        {
+            "path": "invite",
+            "method": "POST",
+            "type": "AWS",
+            "authorizationType": "none",
+            "apiKeyRequired": false,
+            "requestParameters": {},
+            "requestTemplates": {
+                "application/json": ""
+            },
+            "responses": {
+                "400": {
+                    "statusCode": "400"
+                },
+                "default": {
+                    "statusCode": "200",
+                    "responseParameters": {},
+                    "responseModels": {},
+                    "responseTemplates": {
+                        "application/json": ""
+                    }
+                }
+            }
+        }
+    ],
+    "events": []
+}
