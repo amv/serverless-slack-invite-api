@@ -1,6 +1,6 @@
 {
   "name": "serverless-slack-invite-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Serverless API for inviting people to Slack",
   "author": "Antti Vähäkotamäki (https://github.com/amv)",
   "license": "MIT",
