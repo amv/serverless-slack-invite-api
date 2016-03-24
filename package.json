@@ -10,6 +10,7 @@
     "url": "git://github.com/amv/serverless-slack-invite-api.git"
   },
   "dependencies": {
+    "serverless":"0.4.2",
     "serverless-cors-plugin": "^0.3.1"
   },
   "bugs": {

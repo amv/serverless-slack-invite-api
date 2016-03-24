@@ -14,7 +14,9 @@ Invite people to Slack using AWS Lambda and the [Serverless](https://github.com/
 
 ## Create a project
 
-    $ npm install -g serverless
+For now this project is compatible only with Serverless 0.4:
+
+    $ npm install -g serverless@v0.4.2
     $ serverless project install serverless-slack-invite-api -s production
 
 ... And follow the instructions until you get asked for your AWS ACCESS KEY ID.
