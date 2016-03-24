@@ -10,12 +10,12 @@
     //<![CDATA[
 
     var settings = {
+        'execute_api_domain' : '_____________FILL_THIS_______________',
+        // execute_api_domain example: fbcwperrgh.execute-api.eu-west-1.amazonaws.com
+
         'submit_button_selector' : '#button',
         'email_input_selector' : '#email',
-        'return_message_container_selector' : '#return_message',
-
-        // execute_api_domain example: fbcwperrgh.execute-api.eu-west-1.amazonaws.com
-        'execute_api_domain' : '_____________FILL_THIS_______________'
+        'return_message_container_selector' : '#return_message'
     };
 
     function handle_success( message ) { handle( 'success', message ); }
@@ -44,7 +44,7 @@
 
             $.ajax({
                 type: "POST",
-                url: 'https://' + settings.execute_api_domain + '/invite',
+                url: 'https://' + settings.execute_api_domain + '/production/invite',
                 contentType: "application/json",
                 dataType: 'json',
                 data: JSON.stringify( { email : email_value } ),
