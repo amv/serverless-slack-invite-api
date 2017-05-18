@@ -5,6 +5,7 @@ provider:
   runtime: nodejs6.10
   stage: dev
   region: us-east-1
+  timeout: 30
   environment:
 
 # NOTE: update these with our slack domain and token
