@@ -50,7 +50,6 @@
                 data: JSON.stringify( { email : email_value } ),
                 success: function( data ) {
                     try {
-                        data = JSON.parse( data );
                         if ( data.ok ) {
                             handle_success( 'Great success' );
                         }
