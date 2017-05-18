@@ -5,31 +5,22 @@ Invite people to Slack using AWS Lambda and the [Serverless](https://github.com/
 ## Install steps overview
 
 1. Create a new Serverless project using this repository
-2. Generate AWS tokens for deploying Lambda functions
-3. Configure Serverless to use the AWS tokens
-4. Generate API token for controlling Slack
-5. Add Slack API token and domain to your Serverless environment
-6. Deploy API to AWS Lambda
-7. (usually) Add a HTML form to your website for requesting automatic invites
+2. Generate AWS tokens for Serverless to deploying Lambda functions
+3. Generate API token for controlling Slack
+4. Add Slack API token and domain to your Serverless environment
+5. Deploy API to AWS Lambda
+6. (usually) Add a HTML form to your website for requesting automatic invites
 
 ## Create a project
 
-For now this project is compatible only with Serverless 0.4:
+You need Node.JS and NPM installed. Newer serverless versions might work too, but this is what I have tested:
 
-    $ npm install -g serverless@v0.4.2
-    $ serverless project install serverless-slack-invite-api -s production
-
-... And follow the instructions until you get asked for your AWS ACCESS KEY ID.
-
-It does not really matter what you input as long as your bucket name is unique.
+    $ npm install -g serverless@v1.13.2
+    $ serverless create --template serverless-slack-invite-api --path serverless-slack-invite-api
 
 ## Generate AWS token for deploying Lambda functions
 
-Go to the [IAM console](https://console.aws.amazon.com/iam/home) and generate a key pair consisting of a Access Key ID and Secret Access Key.
-
-## Configure Serverless to use the AWS tokens
-
-Input the Access Key ID and Secret Access Key as answers to the questions that were presented to you by the "project install" process.
+Go to the Serverless.com [Quick start guide](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) and set up your Access Key ID and Secret Access Key as instructed.
 
 ## Generate API token for controlling Slack
 
@@ -40,16 +31,13 @@ Visit [OAuth Tokens for Testing -page](https://api.slack.com/docs/oauth-test-tok
 Enter the project directory:
 
     $ cd serverless-slack-invite-api
+    $ npm install
 
-Replace YOUR_SLACK_SUBDOMAIN and YOUR_SLACK_TOKEN from the following commands:
-
-    $ serverless env set -k slack_domain -v YOUR_SLACK_SUBDOMAIN.slack.com
-    $ serverless env set -k slack_token -v YOUR_SLACK_TOKEN
+Edit your `serverless.yml` and replace the following variables with your data: `service`, `slack_domain`, `slack_token`. There is a `# NOTE` comment above the variables so that you can find them easier.
 
 ## Deploy API to AWS Lambda
 
-    $ serverless function deploy --all
-    $ serverless endpoint deploy --all
+    $ serverless deploy
 
 Note the output of the last command, where you can get the URL for your API.
 

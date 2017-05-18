@@ -44,7 +44,7 @@
 
             $.ajax({
                 type: "POST",
-                url: 'https://' + settings.execute_api_domain + '/production/invite',
+                url: 'https://' + settings.execute_api_domain + '/dev/invite',
                 contentType: "application/json",
                 dataType: 'json',
                 data: JSON.stringify( { email : email_value } ),
