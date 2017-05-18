@@ -1,9 +1,10 @@
-# NOTE: update this with your service name, MAX 32 chars or so..
 service: serverless-slack-invite-api
 
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
   environment:
 
 # NOTE: update these with our slack domain and token

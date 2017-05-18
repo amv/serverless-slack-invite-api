@@ -16,7 +16,9 @@ Invite people to Slack using AWS Lambda and the [Serverless](https://github.com/
 You need Node.JS and NPM installed. Newer serverless versions might work too, but this is what I have tested:
 
     $ npm install -g serverless@v1.13.2
-    $ serverless create --template serverless-slack-invite-api --path serverless-slack-invite-api
+    $ sls install -u https://github.com/amv/serverless-slack-invite-api -n my-slack-api
+    $ cd my-slack-api
+    $ npm install
 
 ## Generate AWS token for deploying Lambda functions
 
@@ -28,12 +30,7 @@ Visit [OAuth Tokens for Testing -page](https://api.slack.com/docs/oauth-test-tok
 
 ## Add Slack API token and domain to your Serverless environment
 
-Enter the project directory:
-
-    $ cd serverless-slack-invite-api
-    $ npm install
-
-Edit your `serverless.yml` and replace the following variables with your data: `service`, `slack_domain`, `slack_token`. There is a `# NOTE` comment above the variables so that you can find them easier.
+Edit your `serverless.yml` and replace the following variables with your data: `slack_domain`, `slack_token`. There is a `# NOTE` comment above the variables so that you can find them easier.
 
 ## Deploy API to AWS Lambda
 
