@@ -9,7 +9,7 @@ var config = {
 
 module.exports.invite = (event, context, callback) => {
     var cb = function( data ) {
-        callback(null, { statusCode: 200, body: JSON.stringify( data ) } );
+        callback(null, { statusCode: 200, body: JSON.stringify( data ), headers: { "Access-Control-Allow-Origin" : "*" } } );
     }
 
     var data = JSON.parse(event.body);
